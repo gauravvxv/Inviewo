@@ -27,18 +27,7 @@ export default function SignupPage() {
           </button>
         </form>
 
-        <div className="mt-4 flex items-center gap-2">
-          <hr className="flex-1 border-gray-300" />
-          <span className="text-gray-500 text-sm">OR</span>
-          <hr className="flex-1 border-gray-300" />
-        </div>
-
-        <button
-          className="mt-4 w-full flex items-center justify-center gap-3 border px-4 py-2 rounded-xl hover:bg-gray-50 transition"
-        >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="Google" className="w-5 h-5" />
-          <span className="text-sm text-gray-700 font-medium">Sign up with Google</span>
-        </button>
+       
 
         <p className="mt-4 text-sm text-center text-gray-600">
           Already have an account?{' '}

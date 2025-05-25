@@ -39,13 +39,16 @@ export default function HomePage() {
         >
           InterviewPro connects you with top industry professionals to help you ace your job interviews, improve your resume, and gain confidence.
         </motion.p>
+
+        <a href="/book-session">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-indigo-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition"
-        >
+          >
           Book Your First Session
         </motion.button>
+          </a>
       </section>
 
       {/* Features Section */}
@@ -182,13 +185,15 @@ export default function HomePage() {
         >
           Ready to Land Your Dream Job?
         </motion.h2>
+        <a href="/book-session">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-white text-indigo-600 px-8 py-3 mt-4 rounded-full shadow hover:bg-gray-100 transition"
-        >
+          >
           Get Started Now
         </motion.button>
+          </a>
       </section>
 
       <Footer />
