@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-indigo-700">
-          InterviewPro
+          Nexvue
         </Link>
 
         {/* Desktop Menu */}
@@ -20,11 +20,6 @@ export default function Navbar() {
           <a href="#why-us" className="hover:text-indigo-600">Why Us</a>
           <a href="#categories" className="hover:text-indigo-600">Categories</a>
           <a href="#testimonials" className="hover:text-indigo-600">Testimonials</a>
-            <a href="/signup">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
-          Sign In
-          </button>
-          </a>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -42,11 +37,6 @@ export default function Navbar() {
           <a href="#why-us" className="block py-2 text-gray-700 hover:text-indigo-600">Why Us</a>
           <a href="#categories" className="block py-2 text-gray-700 hover:text-indigo-600">Categories</a>
           <a href="#testimonials" className="block py-2 text-gray-700 hover:text-indigo-600">Testimonials</a>
-            <a href="/signup">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
-          Sign In
-          </button>
-          </a>
         </div>
       )}
     </header>
