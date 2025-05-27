@@ -37,7 +37,7 @@ export default function HomePage() {
           transition={{ delay: 0.3 }}
           className="text-xl max-w-2xl mx-auto mb-6"
         >
-          Nexvue connects you with top industry professionals to help you ace your job interviews, improve your resume, and gain confidence.
+          Inviewo connects you with top industry professionals to help you ace your job interviews, improve your resume, and gain confidence.
         </motion.p>
 
         <a href="/book-session">
@@ -53,7 +53,7 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section id="why-us" className="py-16 px-6 max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold mb-10 text-indigo-700">Why Choose Nexvue?</h2>
+        <h2 className="text-3xl font-semibold mb-10 text-indigo-700">Why Choose Inviewo?</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
@@ -133,7 +133,7 @@ export default function HomePage() {
           transition={{ duration: 0.6 }}
           className="text-lg italic mb-4"
         >
-          “With InterviewPro, I cracked interviews at Microsoft and got my dream job!”
+          “With Inviewo, I cracked interviews at Microsoft and got my dream job!”
         </motion.blockquote>
         <p className="font-semibold text-indigo-800">— Anjali, Software Engineer</p>
       </section>

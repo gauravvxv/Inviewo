@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-indigo-700">
-          Nexvue
+          Inviewo
         </Link>
 
         {/* Desktop Menu */}
