@@ -134,9 +134,9 @@ export default function ProfileP() {
           </button>
         )}
 
-        <span className="text-lg font-semibold text-gray-800">Pay ₹ {amount / 100}</span>
+        <span className="text-lg font-semibold text-gray-800">Pay ₹ {amount /100}</span>
 
-        <PaymentButton sessionId={session_id} amount={amount} />
+        <PaymentButton sessionId={session_id} amount={amount/100} />
       </div>
     </div>
   );
