@@ -138,42 +138,6 @@ export default function HomePage() {
         <p className="font-semibold text-indigo-800">— Anjali, Software Engineer</p>
       </section>
 
-      {/* Pricing Section */}
-      <section id="price" className="bg-white py-16 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-10 text-indigo-700">Simple Pricing</h2>
-        <div className="flex flex-col md:flex-row gap-8 justify-center">
-          {[
-            {
-              title: "Starter",
-              price: "$29",
-              features: ["1 Mock Interview", "Basic Feedback", "Email Support"],
-            },
-            {
-              title: "Pro",
-              price: "$79",
-              features: ["3 Sessions", "Detailed Feedback", "Priority Scheduling"],
-            },
-            {
-              title: "Elite",
-              price: "$149",
-              features: ["5 Sessions", "1 Resume Review", "1:1 Career Coaching"],
-            },
-          ].map((plan) => (
-            <div key={plan.title} className="bg-indigo-100 p-6 rounded-xl shadow-md w-80">
-              <h3 className="text-2xl font-semibold text-indigo-800 mb-2">{plan.title}</h3>
-              <p className="text-3xl font-bold text-indigo-900 mb-4">{plan.price}</p>
-              <ul className="text-left space-y-2">
-                {plan.features.map((f) => (
-                  <li key={f}>✅ {f}</li>
-                ))}
-              </ul>
-              <button className="mt-6 bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition">
-                Choose Plan
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="bg-indigo-600 py-20 text-center text-white">
