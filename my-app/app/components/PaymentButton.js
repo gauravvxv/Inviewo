@@ -26,7 +26,7 @@ export default function PaymentButton({ sessionId, amount }) {
       return;
     }
 
-    const orderData = await fetch("http://localhost:5000/api/payment/create-order", {
+    const orderData = await fetch("https://inviewo-pgback.onrender.com/api/payment/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount }),
@@ -46,7 +46,7 @@ export default function PaymentButton({ sessionId, amount }) {
       description: "Book Your Interview Session",
       order_id: orderData.id,
       handler: async function (response) {
-        const verifyRes = await fetch("http://localhost:5000/api/payment/verify-payment", {
+        const verifyRes = await fetch("https://inviewo-pgback.onrender.com/api/payment/verify-payment", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

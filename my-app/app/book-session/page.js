@@ -45,7 +45,7 @@ export default function BookSessionPage() {
 
       console.log('Booking success:', data);
 
-      localStorage.setItem('intervieweeDetails', JSON.stringify(payload));
+      localStorage.setItem('intervieweeDetails', JSON.stringify(data.booking.session_id));
       router.push('/profile');
     } catch (error) {
       console.error('Booking error:', error?.response?.data || error.message);
