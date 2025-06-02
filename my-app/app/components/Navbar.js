@@ -16,7 +16,6 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-          <a href="#how-it-works" className="hover:text-indigo-600">How It Works</a>
           <a href="#why-us" className="hover:text-indigo-600">Why Us</a>
           <a href="#categories" className="hover:text-indigo-600">Categories</a>
           <a href="#testimonials" className="hover:text-indigo-600">Testimonials</a>
@@ -33,7 +32,6 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-inner px-4 pb-4">
-          <a href="#how-it-works" className="block py-2 text-gray-700 hover:text-indigo-600">How It Works</a>
           <a href="#why-us" className="block py-2 text-gray-700 hover:text-indigo-600">Why Us</a>
           <a href="#categories" className="block py-2 text-gray-700 hover:text-indigo-600">Categories</a>
           <a href="#testimonials" className="block py-2 text-gray-700 hover:text-indigo-600">Testimonials</a>
