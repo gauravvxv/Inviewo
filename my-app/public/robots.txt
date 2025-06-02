@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://inviewo.com
+
+# Sitemaps
 Sitemap: https://inviewo.com/sitemap.xml

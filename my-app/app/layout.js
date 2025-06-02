@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,7 +56,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <head>
+      <Head>
         {/* Basic Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
@@ -90,7 +91,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-      </head>
+      </Head>
       <body className="bg-[#f0f8ff] text-gray-900 min-h-screen">
         {children}
       </body>
