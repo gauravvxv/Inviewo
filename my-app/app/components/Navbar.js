@@ -19,6 +19,8 @@ export default function Navbar() {
           <a href="#why-us" className="hover:text-indigo-600">Why Us</a>
           <a href="#categories" className="hover:text-indigo-600">Categories</a>
           <a href="#testimonials" className="hover:text-indigo-600">Testimonials</a>
+          <a href="#prices" className="hover:text-indigo-600">Prices</a>
+
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -35,6 +37,7 @@ export default function Navbar() {
           <a href="#why-us" className="block py-2 text-gray-700 hover:text-indigo-600">Why Us</a>
           <a href="#categories" className="block py-2 text-gray-700 hover:text-indigo-600">Categories</a>
           <a href="#testimonials" className="block py-2 text-gray-700 hover:text-indigo-600">Testimonials</a>
+          <a href="#prices" className="hover:text-indigo-600">Prices</a>
         </div>
       )}
     </header>
