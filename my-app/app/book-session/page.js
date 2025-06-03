@@ -148,26 +148,39 @@ export default function BookSessionPage() {
         </div>
 
         {/* Advertisement Section */}
-        <div className="bg-gradient-to-br from-indigo-50 to-white p-6 shadow-md rounded-xl text-center">
-          <h3 className="text-xl font-semibold text-indigo-700 mb-4">🔥 Limited Offer</h3>
-          <p className="mb-4 text-gray-600">Get your **first mock interview** at just ₹999 instead of ₹1499!</p>
-          <img
-            src="/promo-banner.png"
-            alt="Promotion"
-            className="rounded-lg shadow mb-4"
-          />
-          <p className="text-sm text-gray-500">Offer valid until <strong>June 15, 2025</strong></p>
+      {/* Advertisement Section */}
+<div className="bg-gradient-to-br from-indigo-50 to-white p-6 shadow-md rounded-xl text-center">
+  <h3 className="text-2xl font-bold text-indigo-700 mb-4">🚀 Ace Your Next Interview with Inviewo!</h3>
+  <p className="mb-4 text-gray-600">
+    Book your first mock interview with industry experts and get personalized feedback that boosts your confidence and interview skills.
+  </p>
 
-          <div className="mt-6">
-            <h4 className="font-semibold text-gray-700 mb-2">💡 Why Choose Inviewo?</h4>
-            <ul className="list-disc text-left text-gray-600 ml-5">
-              <li>Industry experts from top companies</li>
-              <li>Personalized feedback</li>
-              <li>Resume & portfolio tips</li>
-              <li>Live feedback session</li>
-            </ul>
-          </div>
-        </div>
+  <img
+    src="/logo/inviewo banner.png"
+    alt="Inviewo Promo"
+    className="rounded-lg shadow mb-4"
+  />
+
+ <div className="bg-green-100 text-green-800 p-3 rounded mb-4 font-semibold">
+  🎯 Boost Your Interview Skills with Expert Guidance!
+</div>
+
+<p className="text-sm text-gray-600 italic mb-6">
+  Join hundreds of successful candidates who aced their interviews with Inviewo’s personalized mock sessions.
+</p>
+
+  <div className="text-left text-gray-700">
+    <h4 className="font-semibold mb-2">Why Inviewo?</h4>
+    <ul className="list-disc ml-5 space-y-1">
+      <li>1-on-1 mock interviews with professionals</li>
+      <li>Domain-specific mentors from top companies</li>
+      <li>Actionable, personalized feedback</li>
+      <li>Resume + LinkedIn review by experts</li>
+      <li>Boost your confidence before real interviews</li>
+    </ul>
+  </div>
+</div>
+
       </div>
     </div>
   );
