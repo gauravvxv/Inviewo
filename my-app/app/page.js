@@ -39,6 +39,15 @@ export default function HomePage() {
         >
           Inviewo connects you with top industry professionals to help you ace your job interviews, improve your resume, and gain confidence.
         </motion.p>
+<motion.h1
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.3 }}
+  className="text-xl max-w-2xl mx-auto mb-6 font-medium text-gray-800"
+>
+  Confidence isn't forged in the final interview it's built in the practice ones. At <span className="text-indigo-700 font-semibold">Inviewo</span>, we don't just prepare you for questions we prepare you to win.
+</motion.h1>
+
 
         <a href="/book-session">
         <motion.button
@@ -145,12 +154,30 @@ export default function HomePage() {
     We believe in making career growth accessible. That’s why our pricing is not just affordable — it’s built to give you <strong>maximum value</strong> with <strong>minimum investment</strong>.
   </p>
 
-  <div className="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto mb-20">
+  {/* Pricing Cards Container */}
+  <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-6xl mx-auto mb-20 px-4">
+
+    {/* 1 Mock Interview */}
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      className="flex-1 bg-white shadow-2xl rounded-2xl p-6 border border-indigo-100"
+    >
+      <h3 className="text-2xl font-bold text-indigo-800 mb-2">1 Mock Interview</h3>
+      <p className="text-5xl font-extrabold text-indigo-600 mb-1">₹199</p>
+      <p className="text-gray-400 line-through mb-1">₹399</p>
+      <p className="text-green-600 font-semibold mb-4">Save 50%</p>
+      <ul className="text-left text-gray-700 mb-6 space-y-3 text-base">
+        <li>✅ One-on-One Expert Interview</li>
+        <li>✅ Personalized Feedback</li>
+        <li>✅ Real Industry Questions</li>
+        <li>✅ Confidence Boost Before the Real Thing</li>
+      </ul>
+    </motion.div>
 
     {/* Monthly Plan */}
     <motion.div
       whileHover={{ scale: 1.03 }}
-      className="bg-white shadow-2xl rounded-2xl p-6 w-100 border border-indigo-100"
+      className="flex-1 bg-white shadow-2xl rounded-2xl p-6 border border-indigo-100"
     >
       <h3 className="text-2xl font-bold text-indigo-800 mb-2">Monthly Plan</h3>
       <p className="text-5xl font-extrabold text-indigo-600 mb-1">₹1000</p>
@@ -162,17 +189,12 @@ export default function HomePage() {
         <li>✅ Industry-Specific Practice</li>
         <li>✅ Personalized Feedback</li>
       </ul>
-      <a href="/book-session">
-        <button className="bg-indigo-600 text-white w-full py-3 rounded-full hover:bg-indigo-700 transition text-lg font-medium">
-          Choose Monthly
-        </button>
-      </a>
     </motion.div>
 
     {/* Yearly Plan */}
     <motion.div
       whileHover={{ scale: 1.03 }}
-      className="bg-indigo-50 shadow-2xl rounded-2xl p-10 w-100 border border-indigo-200"
+      className="flex-1 bg-indigo-50 shadow-2xl rounded-2xl p-6 border border-indigo-200"
     >
       <h3 className="text-2xl font-bold text-indigo-800 mb-2">Yearly Plan</h3>
       <p className="text-5xl font-extrabold text-indigo-600 mb-1">₹700</p>
@@ -184,34 +206,29 @@ export default function HomePage() {
         <li>✅ Free Bonus Call Anytime</li>
         <li>✅ Higher Savings, Zero Hassle</li>
       </ul>
-      <a href="/book-session">
-        <button className="bg-indigo-600 text-white w-full py-3 rounded-full hover:bg-indigo-700 transition text-lg font-medium">
-          Choose Yearly
-        </button>
-      </a>
     </motion.div>
   </div>
 
-<motion.div
-  whileInView={{ opacity: 1, y: 0 }}
-  initial={{ opacity: 0, y: 30 }}
-  transition={{ duration: 0.6 }}
-  className="relative max-w-4xl mx-auto bg-gradient-to-br from-white via-purple-50 to-white rounded-2xl shadow-xl p-10 text-left text-gray-800 mt-10"
->
-  <div className="absolute -top-5 left-6 text-indigo-600 text-4xl font-bold opacity-20">
-    “
-  </div>
-  <p className="mb-6 text-lg leading-relaxed">
-    <strong className="text-indigo-700">Most coaching platforms charge ₹3500 or more per month</strong> — and they rarely offer personalized 1:1 feedback or flexible scheduling that adapts to your job goals.
-  </p>
-  <p className="mb-6 text-lg leading-relaxed">
-    <strong className="text-purple-700">At Inviewo,</strong> we’ve created a platform where students and professionals from all backgrounds can experience real-world mock interviews, get expert feedback, and build true confidence — without spending a fortune.
-  </p>
-  <p className="text-xl font-semibold text-indigo-800 italic border-l-4 pl-4 border-indigo-400">
-    You're not just paying for sessions — you're investing in your career growth.
-  </p>
-</motion.div>
-
+  {/* Why Inviewo Section */}
+  <motion.div
+    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 30 }}
+    transition={{ duration: 0.6 }}
+    className="relative max-w-4xl mx-auto bg-gradient-to-br from-white via-purple-50 to-white rounded-2xl shadow-xl p-10 text-left text-gray-800 mt-10"
+  >
+    <div className="absolute -top-5 left-6 text-indigo-600 text-4xl font-bold opacity-20">
+      “
+    </div>
+    <p className="mb-6 text-lg leading-relaxed">
+      <strong className="text-indigo-700">Most coaching platforms charge ₹3500 or more per month</strong> — and they rarely offer personalized 1:1 feedback or flexible scheduling that adapts to your job goals.
+    </p>
+    <p className="mb-6 text-lg leading-relaxed">
+      <strong className="text-purple-700">At Inviewo,</strong> we’ve created a platform where students and professionals from all backgrounds can experience real-world mock interviews, get expert feedback, and build true confidence — without spending a fortune.
+    </p>
+    <p className="text-xl font-semibold text-indigo-800 italic border-l-4 pl-4 border-indigo-400">
+      You're not just paying for sessions — you're investing in your career growth.
+    </p>
+  </motion.div>
 </section>
 
 

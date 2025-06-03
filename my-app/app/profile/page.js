@@ -15,9 +15,13 @@ export default function ProfileP() {
 
   const [isEditing, setIsEditing] = useState(false);
   const [session_id, setSession_id] = useState(null);
-  const [plan, setPlan] = useState("monthly"); // "monthly" or "yearly"
+  const [plan, setPlan] = useState("monthly"); // "monthly", "yearly", or "twomocks"
 
-  const amount = plan === "monthly" ? 100000 : 840000; // amount in paise
+  const amount = plan === "monthly"
+    ? 100000
+    : plan === "yearly"
+    ? 840000
+    : 19900; // amount in paise
 
   useEffect(() => {
     const session = localStorage.getItem('intervieweeDetails');
@@ -120,7 +124,7 @@ export default function ProfileP() {
       {/* Plan Selection */}
       <div className="mt-8">
         <label className="block font-semibold text-gray-700 mb-2">Choose Your Plan:</label>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <button
             onClick={() => setPlan("monthly")}
             className={`px-4 py-2 rounded-lg border ${
@@ -136,6 +140,14 @@ export default function ProfileP() {
             }`}
           >
             ₹700 / month (₹8400/year)
+          </button>
+          <button
+            onClick={() => setPlan("twomocks")}
+            className={`px-4 py-2 rounded-lg border ${
+              plan === "twomocks" ? "bg-indigo-600 text-white" : "bg-white text-gray-800"
+            }`}
+          >
+            ₹199 / 2 Mock Interviews
           </button>
         </div>
       </div>
@@ -160,7 +172,11 @@ export default function ProfileP() {
 
         <div className="flex flex-col">
           <span className="text-lg font-semibold text-gray-800">
-            {plan === "monthly" ? "₹1000 / month" : "₹8400 / year (₹700/month)"}
+            {plan === "monthly"
+              ? "₹1000 / month"
+              : plan === "yearly"
+              ? "₹8400 / year (₹700/month)"
+              : "₹199 / 2 Mock Interviews"}
           </span>
         </div>
 
