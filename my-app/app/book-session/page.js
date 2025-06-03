@@ -15,12 +15,16 @@ export default function BookSessionPage() {
     resume_link: ''
   });
 
+  const [loading, setLoading] = useState(false); // Loading state
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
+
     const payload = { ...form };
 
     try {
@@ -41,6 +45,8 @@ export default function BookSessionPage() {
     } catch (error) {
       console.error('Booking error:', error?.response?.data || error.message);
       alert('Something went wrong while booking. Please try again.');
+    } finally {
+      setLoading(false); // Stop loading after success or error
     }
   };
 
@@ -140,47 +146,72 @@ export default function BookSessionPage() {
             />
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white p-3 rounded hover:bg-indigo-700"
+              className={`w-full p-3 rounded text-white ${loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+              disabled={loading}
             >
-              Submit and Proceed
+              {loading ? (
+                <div className="flex items-center justify-center space-x-2">
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  <span>Submitting...</span>
+                </div>
+              ) : (
+                'Submit and Proceed'
+              )}
             </button>
           </form>
         </div>
 
         {/* Advertisement Section */}
-      {/* Advertisement Section */}
-<div className="bg-gradient-to-br from-indigo-50 to-white p-6 shadow-md rounded-xl text-center">
-  <h3 className="text-2xl font-bold text-indigo-700 mb-4">🚀 Ace Your Next Interview with Inviewo!</h3>
-  <p className="mb-4 text-gray-600">
-    Book your first mock interview with industry experts and get personalized feedback that boosts your confidence and interview skills.
-  </p>
+        <div className="bg-gradient-to-br from-indigo-50 to-white p-6 shadow-md rounded-xl text-center">
+          <h3 className="text-2xl font-bold text-indigo-700 mb-4">🚀 Ace Your Next Interview with Inviewo!</h3>
+          <p className="mb-4 text-gray-600">
+            Book your first mock interview with industry experts and get personalized feedback that boosts your confidence and interview skills.
+          </p>
 
-  <img
-    src="/logo/inviewo banner.png"
-    alt="Inviewo Promo"
-    className="rounded-lg shadow mb-4"
-  />
+          <img
+            src="/logo/inviewo banner.png"
+            alt="Inviewo Promo"
+            className="rounded-lg shadow mb-4"
+          />
 
- <div className="bg-green-100 text-green-800 p-3 rounded mb-4 font-semibold">
-  🎯 Boost Your Interview Skills with Expert Guidance!
-</div>
+          <div className="bg-green-100 text-green-800 p-3 rounded mb-4 font-semibold">
+            🎯 Boost Your Interview Skills with Expert Guidance!
+          </div>
 
-<p className="text-sm text-gray-600 italic mb-6">
-  Join hundreds of successful candidates who aced their interviews with Inviewo’s personalized mock sessions.
-</p>
+          <p className="text-sm text-gray-600 italic mb-6">
+            Join hundreds of successful candidates who aced their interviews with Inviewo’s personalized mock sessions.
+          </p>
 
-  <div className="text-left text-gray-700">
-    <h4 className="font-semibold mb-2">Why Inviewo?</h4>
-    <ul className="list-disc ml-5 space-y-1">
-      <li>1-on-1 mock interviews with professionals</li>
-      <li>Domain-specific mentors from top companies</li>
-      <li>Actionable, personalized feedback</li>
-      <li>Resume + LinkedIn review by experts</li>
-      <li>Boost your confidence before real interviews</li>
-    </ul>
-  </div>
-</div>
-
+          <div className="text-left text-gray-700">
+            <h4 className="font-semibold mb-2">Why Inviewo?</h4>
+            <ul className="list-disc ml-5 space-y-1">
+              <li>1-on-1 mock interviews with professionals</li>
+              <li>Domain-specific mentors from top companies</li>
+              <li>Actionable, personalized feedback</li>
+              <li>Resume + LinkedIn review by experts</li>
+              <li>Boost your confidence before real interviews</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
