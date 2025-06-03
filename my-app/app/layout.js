@@ -1,6 +1,6 @@
+// app/layout.tsx
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Inviewo – Expert Learning & Booking Platform",
   description: "Inviewo offers expert-led live sessions and courses. Book your first session today and enhance your skills.",
-  metadataBase: new URL("https://inviewo.com"),
+  metadataBase: new URL("https://www.inviewo.com"),
   keywords: [
     "Inviewo",
     "online learning",
@@ -25,17 +25,17 @@ export const metadata = {
     "education",
     "mentorship"
   ],
-  authors: [{ name: "Inviewo", url: "https://inviewo.com" }],
+  authors: [{ name: "Inviewo", url: "https://www.inviewo.com" }],
   robots: "index, follow",
   openGraph: {
     type: "website",
     title: "Inviewo – Expert Learning & Booking Platform",
     description: "Inviewo offers expert-led live sessions and courses. Book your first session today and enhance your skills.",
-    url: "https://inviewo.com",
+    url: "https://www.inviewo.com",
     siteName: "Inviewo",
     images: [
       {
-        url: "https://inviewo.com/logo.png",
+        url: "/logo.png", // relative path from /public
         width: 1200,
         height: 630,
         alt: "Inviewo Logo",
@@ -46,7 +46,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Inviewo – Expert Learning & Booking Platform",
     description: "Inviewo offers expert-led live sessions and courses. Book your first session today and enhance your skills.",
-    images: ["https://inviewo.com/logo.png"],
+    images: ["/logo.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -56,42 +56,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <Head>
-        {/* Basic Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Inviewo – Expert Learning & Booking Platform" />
-        <meta property="og:description" content="Inviewo offers expert-led live sessions and courses. Book your first session today and enhance your skills." />
-        <meta property="og:url" content="https://inviewo.com" />
-        <meta property="og:image" content="https://inviewo.com/logo.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Inviewo" />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Inviewo – Expert Learning & Booking Platform" />
-        <meta name="twitter:description" content="Inviewo offers expert-led live sessions and courses. Book your first session today and enhance your skills." />
-        <meta name="twitter:image" content="https://inviewo.com/logo.png" />
-
-        {/* Structured Data for Logo (Google Rich Results) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Inviewo",
-              url: "https://inviewo.com",
-              logo: "https://inviewo.com/logo.png",
-            }),
-          }}
-        />
-      </Head>
       <body className="bg-[#f0f8ff] text-gray-900 min-h-screen">
         {children}
       </body>
