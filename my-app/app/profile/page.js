@@ -4,7 +4,7 @@ import PaymentButton from '../components/PaymentButton'; // Adjust path if neede
 
 export default function ProfileP() {
   const [form, setForm] = useState({
-     name: '',
+    name: '',
     email: '',
     phone_number: '',
     domain: '',
@@ -14,19 +14,20 @@ export default function ProfileP() {
   });
 
   const [isEditing, setIsEditing] = useState(false);
-  const [session_id,setSession_id] = useState(null)
-  const amount =  10000;
+  const [session_id, setSession_id] = useState(null);
+  const [plan, setPlan] = useState("monthly"); // "monthly" or "yearly"
 
-   useEffect(() => {
+  const amount = plan === "monthly" ? 100000 : 840000; // amount in paise
+
+  useEffect(() => {
     const session = localStorage.getItem('intervieweeDetails');
-     console.log('intervieweeDetails from localStorage:', session);
+    console.log('intervieweeDetails from localStorage:', session);
     if (session) {
-        setSession_id(session);
-        fetchBookingData(session);
+      setSession_id(session);
+      fetchBookingData(session);
     }
   }, []);
 
-  // Fetch booking data using session_id
   const fetchBookingData = async (session) => {
     try {
       const res = await fetch(`https://inviewo-pgback.onrender.com/api/booking/${session}`);
@@ -43,11 +44,12 @@ export default function ProfileP() {
         bio: data.bio || '',
         resume_link: data.resume_link || '',
       });
-      console.log(data)
+      console.log(data);
     } catch (error) {
       console.error('Error fetching booking:', error);
     }
   };
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -59,7 +61,7 @@ export default function ProfileP() {
     }
     try {
       const res = await fetch(`https://inviewo-pgback.onrender.com/api/booking/${session_id}`, {
-        method: 'PUT', 
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -77,7 +79,7 @@ export default function ProfileP() {
     }
   };
 
-    const fields = [
+  const fields = [
     { key: 'name', label: 'Name' },
     { key: 'email', label: 'Email' },
     { key: 'phone_number', label: 'Phone Number' },
@@ -86,7 +88,6 @@ export default function ProfileP() {
     { key: 'bio', label: 'Bio' },
     { key: 'resume_link', label: 'Resume Link' },
   ];
-
 
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-lg mt-10">
@@ -98,7 +99,7 @@ export default function ProfileP() {
 
       <h2 className="text-3xl font-bold mb-6 text-indigo-700">Your Interview Profile</h2>
 
-       <div className="space-y-5">
+      <div className="space-y-5">
         {fields.map(({ key, label }) => (
           <div key={key}>
             <label className="block font-semibold capitalize mb-1 text-gray-700">{label}</label>
@@ -116,8 +117,31 @@ export default function ProfileP() {
         ))}
       </div>
 
+      {/* Plan Selection */}
+      <div className="mt-8">
+        <label className="block font-semibold text-gray-700 mb-2">Choose Your Plan:</label>
+        <div className="flex gap-4">
+          <button
+            onClick={() => setPlan("monthly")}
+            className={`px-4 py-2 rounded-lg border ${
+              plan === "monthly" ? "bg-indigo-600 text-white" : "bg-white text-gray-800"
+            }`}
+          >
+            ₹1000 / month
+          </button>
+          <button
+            onClick={() => setPlan("yearly")}
+            className={`px-4 py-2 rounded-lg border ${
+              plan === "yearly" ? "bg-indigo-600 text-white" : "bg-white text-gray-800"
+            }`}
+          >
+            ₹700 / month (₹8400/year)
+          </button>
+        </div>
+      </div>
+
       {/* Buttons and Payment Section */}
-      <div className="flex items-center gap-6 mt-8">
+      <div className="flex flex-col md:flex-row md:items-center gap-6 mt-8">
         {!isEditing ? (
           <button
             onClick={() => setIsEditing(true)}
@@ -134,9 +158,13 @@ export default function ProfileP() {
           </button>
         )}
 
-        <span className="text-lg font-semibold text-gray-800">Pay ₹ {amount /100}</span>
+        <div className="flex flex-col">
+          <span className="text-lg font-semibold text-gray-800">
+            {plan === "monthly" ? "₹1000 / month" : "₹8400 / year (₹700/month)"}
+          </span>
+        </div>
 
-        <PaymentButton sessionId={session_id} amount={amount/100} />
+        <PaymentButton sessionId={session_id} amount={amount / 100} />
       </div>
     </div>
   );
