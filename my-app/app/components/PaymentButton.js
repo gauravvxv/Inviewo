@@ -73,7 +73,7 @@ export default function PaymentButton({ sessionId, amount }) {
         contact: "",
       },
       theme: {
-        color: "#6366f1", // Tailwind indigo-500
+        color: "#6366f1", 
       },
     };
 
