@@ -23,7 +23,7 @@ export default function BookSessionPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading
+    setLoading(true);
 
     const payload = { ...form };
 
